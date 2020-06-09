@@ -39,12 +39,55 @@ public class Principal {
 			
 			resposta = jopInt(menu.toString());
 			
+			switch (resposta) {
+			case 1: //  1 - Cadastrar funcionario
+				
+				break;
+			case 2: // 2 - Alterar funcionario
+				
+				break;
+			case 3: // 3 - Listar funcionarios
+				
+				break;
+			case 4: // 4 - Cadastrar cliente
+				
+				break;
+			case 5: // 5 - Alterar cliente
+				
+				break;
+			case 6: // 7 - Cadastrar serviço
+				
+				break;
+			case 7: // 7 - Cadastrar serviço
+				
+				break;
+			case 8: //8 - Alterar serviço
+				
+				break;
+			case 9: // 9 - Listar serviço
+				
+				break;
+			case 10: // 10 - Efetuar venda
+				
+				break;
+			case 11: // 11 - Listar vendas
+				
+				break;
+			
+			case 0: // Sair
+				
+				break;
+
+			default: // opção invalida
+				break;
+			}
+			
 		}
 
 	}
 	
 
-	public static Integer jopInt(String mensagem) {
+	public static final Integer jopInt(String mensagem) {
 
 		Integer numero = 0;
 		return Integer.parseInt(JOptionPane.showInputDialog(mensagem));
