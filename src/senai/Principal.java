@@ -20,6 +20,8 @@ public class Principal {
 	
 		StringBuffer menu = new StringBuffer();
 		
+		String nomeFuncionario = "";		
+		String profissaoFuncionario = "";		
 		int resposta = -1;
 		
 		while( resposta != 0) {
@@ -42,6 +44,14 @@ public class Principal {
 			
 			switch (resposta) {
 			case 1: //  1 - Cadastrar funcionario
+				
+				nomeFuncionario = jopStr("Digite o nome do funcionário:");
+				profissaoFuncionario = jopStr("Digite a profissão  do funcionário:");
+				
+				nomeFuncionarios.add(nomeFuncionario);
+				profissaoFuncionarios.add(profissaoFuncionario);
+				jop("Funcionario " + nomeFuncionario.toString() + " profissao: " + profissaoFuncionarios.toString()); 	
+				
 				
 				break;
 			case 2: // 2 - Alterar funcionario
@@ -87,6 +97,12 @@ public class Principal {
 			
 		}
 
+	}
+	public static String jopStr(String mensagem) {
+
+		String retorno = "";
+		return JOptionPane.showInputDialog(mensagem);
+		
 	}
 	
 
