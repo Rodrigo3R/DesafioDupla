@@ -109,31 +109,51 @@ public class Principal {
 				nomeClientes.add(nomeFuncionario);
 				telefoneClientes.add(profissaoFuncionario);
 				jop("Cliente cadastrado com sucesso");
-				
+
 				break;
 			case 5: // 5 - Alterar cliente
+
+				if (!nomeClientes.isEmpty()) {
+
+					nomeFuncionario = jopStr("Digite o nome do cliente que deseja alterar:");
+					for (int i = 0; i < nomeClientes.size(); i++) {
+
+						if (nomeClientes.get(i).equalsIgnoreCase(nomeFuncionario)) {
+
+							nomeFuncionario = jopStr("Digite o novo nome do cliente:");
+							nomeClientes.set(i, nomeFuncionario);
+
+							profissaoFuncionario = jopStr("Digite o telefone do cliente:");
+							telefoneClientes.set(i, profissaoFuncionario);
+						}
+
+						jop("Cliente modificado com sucesso");
+
+					}
+
+				} else {
+					jop("Lista vazia");
+				}
 
 				break;
 			case 6: // 7 - Listar cliente
 
-
 				if (!nomeClientes.isEmpty()) {
-					
+
 					lista = new StringBuffer();
 
 					for (int i = 0; i < nomeClientes.size(); i++) {
-						
+
 						lista.append(nomeClientes.get(i) + "\n");
 					}
 
 					jop(lista.toString());
 
 				} else {
-					
+
 					jop("Lista vazia");
 				}
 
-				
 				break;
 			case 7: // 7 - Cadastrar serviço
 
