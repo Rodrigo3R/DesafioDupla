@@ -12,7 +12,9 @@ public class Principal {
 	static List<String> nomeClientes = new ArrayList<String>();
 	static List<String> telefoneClientes = new ArrayList<String>();
 	static List<String> servicos = new ArrayList<String>();
+	static List<String> ValorServicos = new ArrayList<String>();
 	static List<String> vendas = new ArrayList<String>();
+	static List<String> valorVenda = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 	
