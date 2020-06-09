@@ -73,6 +73,7 @@ public class Principal {
 								profissaoFuncionarios.set(i, profissaoFuncionario);
 							
 							}
+							jop("Funcionário alterado com sucesso");
 						}
 					} 
 					
