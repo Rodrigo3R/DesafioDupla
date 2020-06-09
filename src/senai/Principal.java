@@ -103,6 +103,13 @@ public class Principal {
 				break;
 			case 4: // 4 - Cadastrar cliente
 
+				nomeFuncionario = jopStr("Digite o nome do cliente:");
+				profissaoFuncionario = jopStr("Digite o telefone do cliente:");
+
+				nomeClientes.add(nomeFuncionario);
+				telefoneClientes.add(profissaoFuncionario);
+				jop("Cliente cadastrado com sucesso");
+				
 				break;
 			case 5: // 5 - Alterar cliente
 
