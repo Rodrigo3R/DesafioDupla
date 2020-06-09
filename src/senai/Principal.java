@@ -114,8 +114,26 @@ public class Principal {
 			case 5: // 5 - Alterar cliente
 
 				break;
-			case 6: // 7 - Cadastrar serviço
+			case 6: // 7 - Listar cliente
 
+
+				if (!nomeClientes.isEmpty()) {
+					
+					lista = new StringBuffer();
+
+					for (int i = 0; i < nomeClientes.size(); i++) {
+						
+						lista.append(nomeClientes.get(i) + "\n");
+					}
+
+					jop(lista.toString());
+
+				} else {
+					
+					jop("Lista vazia");
+				}
+
+				
 				break;
 			case 7: // 7 - Cadastrar serviço
 
