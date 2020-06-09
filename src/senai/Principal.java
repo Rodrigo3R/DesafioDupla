@@ -50,8 +50,7 @@ public class Principal {
 				
 				nomeFuncionarios.add(nomeFuncionario);
 				profissaoFuncionarios.add(profissaoFuncionario);
-				jop("Funcionario " + nomeFuncionario.toString() + " profissao: " + profissaoFuncionarios.toString()); 	
-				
+				jop("Funcionário cadastrado com sucesso");
 				
 				break;
 			case 2: // 2 - Alterar funcionario
