@@ -55,6 +55,32 @@ public class Principal {
 				break;
 			case 2: // 2 - Alterar funcionario
 				
+				if (!nomeFuncionarios.isEmpty()) {
+					
+					nomeFuncionario = jopStr("Digite o nome do funcionário que deseja alterar:");
+					for (int i = 0; i < nomeFuncionarios.size(); i++) {
+						
+						if(nomeFuncionarios.get(i).equalsIgnoreCase(nomeFuncionario)) {
+							
+							nomeFuncionario = jopStr("Digite o novo nome do funcionário:");
+							nomeFuncionarios.set(i, nomeFuncionario);
+							
+							profissaoFuncionario =jopStr("Deseja alterar a profissão? ( S / N )");
+						
+							if(profissaoFuncionario.equalsIgnoreCase("s")) {
+								
+								profissaoFuncionario = jopStr("Digite a profissão do funcionário:");
+								profissaoFuncionarios.set(i, profissaoFuncionario);
+							
+							}
+						}
+					} 
+					
+				}
+				else {
+					jop("Lista vazia");
+				}
+				
 				break;
 			case 3: // 3 - Listar funcionarios
 				
