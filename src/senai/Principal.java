@@ -24,6 +24,7 @@ public class Principal {
 		
 		while( resposta != 0) {
 		
+			menu = new StringBuffer();
 			menu.append("1 - Cadastrar funcionario\n");
 			menu.append("2 - Alterar funcionario\n");
 			menu.append("3 - Listar funcionarios\n");
@@ -76,6 +77,8 @@ public class Principal {
 			
 			case 0: // Sair
 				
+				resposta = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja sair?");
+				
 				break;
 
 			default: // opção invalida
@@ -92,6 +95,11 @@ public class Principal {
 		Integer numero = 0;
 		return Integer.parseInt(JOptionPane.showInputDialog(mensagem));
 		
+	}
+	
+	public static final void jop(String mensagem) {
+
+		JOptionPane.showMessageDialog(null, mensagem);
 	}
 
 }
