@@ -47,8 +47,8 @@ public class Principal {
 	public static Integer jopInt(String mensagem) {
 
 		Integer numero = 0;
-		numero = Integer.parseInt(JOptionPane.showInputDialog(mensagem));
-		return numero;
+		return Integer.parseInt(JOptionPane.showInputDialog(mensagem));
+		
 	}
 
 }
