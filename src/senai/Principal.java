@@ -35,9 +35,9 @@ public class Principal {
 			menu.append("4 - Cadastrar cliente\n");
 			menu.append("5 - Alterar cliente\n");
 			menu.append("6 - Listar clientes\n");
-			menu.append("7 - Cadastrar serviÁo\n");
-			menu.append("8 - Alterar serviÁo\n");
-			menu.append("9 - Listar serviÁo\n");
+			menu.append("7 - Cadastrar servi√ßo\n");
+			menu.append("8 - Alterar servi√ßo\n");
+			menu.append("9 - Listar servi√ßo\n");
 			menu.append("10 - Efetuar venda\n");
 			menu.append("11 - Listar vendas\n");
 			menu.append("0- Sair\n");
@@ -47,36 +47,36 @@ public class Principal {
 			switch (resposta) {
 			case 1: // 1 - Cadastrar funcionario
 
-				nomeFuncionario = jopStr("Digite o nome do funcion·rio:");
-				profissaoFuncionario = jopStr("Digite a profiss„o  do funcion·rio:");
+				nomeFuncionario = jopStr("Digite o nome do funcion√°rio:");
+				profissaoFuncionario = jopStr("Digite a profiss√£o  do funcion√°rio:");
 
 				nomeFuncionarios.add(nomeFuncionario);
 				profissaoFuncionarios.add(profissaoFuncionario);
-				jop("Funcion·rio cadastrado com sucesso");
+				jop("Funcion√°rio cadastrado com sucesso");
 
 				break;
 			case 2: // 2 - Alterar funcionario
 
 				if (!nomeFuncionarios.isEmpty()) {
 
-					nomeFuncionario = jopStr("Digite o nome do funcion·rio que deseja alterar:");
+					nomeFuncionario = jopStr("Digite o nome do funcion√°rio que deseja alterar:");
 					for (int i = 0; i < nomeFuncionarios.size(); i++) {
 
 						if (nomeFuncionarios.get(i).equalsIgnoreCase(nomeFuncionario)) {
 
-							nomeFuncionario = jopStr("Digite o novo nome do funcion·rio:");
+							nomeFuncionario = jopStr("Digite o novo nome do funcion√°rio:");
 							nomeFuncionarios.set(i, nomeFuncionario);
 
-							profissaoFuncionario = jopStr("Deseja alterar a profiss„o? ( S / N )");
+							profissaoFuncionario = jopStr("Deseja alterar a profiss√£o? ( S / N )");
 
 							if (profissaoFuncionario.equalsIgnoreCase("s")) {
 
-								profissaoFuncionario = jopStr("Digite a profiss„o do funcion·rio:");
+								profissaoFuncionario = jopStr("Digite a profiss√£o do funcion√°rio:");
 								profissaoFuncionarios.set(i, profissaoFuncionario);
 
 							}
 
-							jop("Funcion·rio alterado com sucesso");
+							jop("Funcion√°rio alterado com sucesso");
 
 						}
 					}
@@ -156,6 +156,7 @@ public class Principal {
 				}
 
 				break;
+<<<<<<< HEAD
 			case 7: // 7 - Cadastrar serviÁo
 				
 				nomeFuncionario = jopStr("ServiÁo:");
@@ -228,6 +229,64 @@ public class Principal {
 					jop("Lista vazia");
 				}
 				
+=======
+			case 7: // 7 - Cadastrar servi√ßo
+                          nomeFuncionario = jopStr("Qual servi√ßo quer disponibilizar?: ");
+				profissaoFuncionario = jopStr("Qual o valor do servi√ßo: ");
+				servicos.add(nomeFuncionario);
+				ValorServicos.add(profissaoFuncionario);
+				jop("Cliente cadastrado com sucesso!");
+				break;
+			case 8: // 8 - Alterar servi√ßo
+                          if (!servicos.isEmpty()) {
+					
+					nomeFuncionario = jopStr("Digite o nome do Servi√ßo que deseja alterar: ");
+					for (int i = 0; i < servicos.size(); i++) {
+						     if (servicos.get(i).equalsIgnoreCase(nomeFuncionario)) {
+								      nomeFuncionario = jopStr("Digite o novo nome do Servi√ßo: ");
+								      servicos.set(i, nomeFuncionario);
+								      								      								       
+								    profissaoFuncionario = jopStr("Digite o valor do servi√ßo: ");
+								    ValorServicos.set(i, profissaoFuncionario);
+									
+								      jop("Servi√ßo modificado com sucesso");
+							}
+						}
+					
+				} else {
+					jop("N√£o h√° nenhum funci√≥nario na lista!");
+				}
+				break;
+			case 9: // 9 - Listar servi√ßo
+                          if (!servicos.isEmpty()) {
+					lista = new StringBuffer();
+					for (int i = 0; i < servicos.size(); i++) {
+						lista.append(servicos.get(i) +"\n");}
+					jop(lista.toString());
+				} else {
+					jop("Lista vazia");
+				}
+				break;
+			case 10: // 10 - Efetuar venda
+                            nomeFuncionario = jopStr("Qual venda quer efetuar?: ");
+				profissaoFuncionario = jopStr("Qual o valor da venda: ");
+				vendas.add(nomeFuncionario);
+				valorVenda.add(profissaoFuncionario);
+				jop("Venda efetuada com sucesso!");
+				break;
+			case 11: // 11 - Listar vendas
+                               if (!vendas.isEmpty()) {
+					lista = new StringBuffer();
+					for (int i = 0; i < vendas.size(); i++) {
+						lista.append(vendas.get(i)+": ");
+					    lista.append(valorVenda.get(i)+"\n");
+					}
+					
+					jop(lista.toString());
+				} else {
+					jop("Lista vazia");
+				}
+>>>>>>> 3150719b8409dd4ea317a7c0e7ad584b661a58b5
 				break;
 
 			case 0: // Sair
@@ -236,9 +295,13 @@ public class Principal {
 
 				break;
 
+<<<<<<< HEAD
 			default: // opÁ„o invalida
 				
 				jop("O numero escolhido tem que ser de 0 ‡ 11");
+=======
+			default: // op√ß√£o invalida
+>>>>>>> 3150719b8409dd4ea317a7c0e7ad584b661a58b5
 				break;
 			}
 
