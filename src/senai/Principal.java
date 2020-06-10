@@ -12,9 +12,9 @@ public class Principal {
 	static List<String> nomeClientes = new ArrayList<String>();
 	static List<String> telefoneClientes = new ArrayList<String>();
 	static List<String> servicos = new ArrayList<String>();
-	static List<String> ValorServicos = new ArrayList<String>();
+	static List<Double> valorServicos = new ArrayList<Double>();
 	static List<String> vendas = new ArrayList<String>();
-	static List<String> valorVenda = new ArrayList<String>();
+	static List<Double> valorVenda = new ArrayList<Double>();
 
 	public static void main(String[] args) {
 
@@ -23,6 +23,7 @@ public class Principal {
 
 		String nomeFuncionario = "";
 		String profissaoFuncionario = "";
+		double valor = 0.0;
 		int resposta = -1;
 
 		while (resposta != 0) {
@@ -156,19 +157,77 @@ public class Principal {
 
 				break;
 			case 7: // 7 - Cadastrar serviço
+				
+				nomeFuncionario = jopStr("Serviço:");
+				valor = Double.parseDouble(jopStr("Valor:"));
+
+				servicos.add(nomeFuncionario);
+				valorServicos.add(valor);
+				
+				jop("Serviço cadastrado com sucesso");
 
 				break;
 			case 8: // 8 - Alterar serviço
+				
+				  if (!servicos.isEmpty()) {
+						
+						nomeFuncionario = jopStr("Digite o nome do Serviço que deseja alterar: ");
+						for (int i = 0; i < servicos.size(); i++) {
+							     if (servicos.get(i).equalsIgnoreCase(nomeFuncionario)) {
+									      nomeFuncionario = jopStr("Digite o novo nome do Serviço: ");
+									      servicos.set(i, nomeFuncionario);
+									      								      								       
+									    profissaoFuncionario = jopStr("Digite o valor do serviço: ");
+									    valorServicos.set(i, Double.parseDouble(profissaoFuncionario));
+										
+									      jop("Serviço modificado com sucesso");
+								}
+							}
+						
+					} else {
+						jop("Não há nenhum funciónario na lista!");
+					}
 
 				break;
 			case 9: // 9 - Listar serviço
+				
+				 if (!servicos.isEmpty()) {
+						lista = new StringBuffer();
+						for (int i = 0; i < servicos.size(); i++) {
+							lista.append(servicos.get(i) +"\n");}
+						jop(lista.toString());
+					} else {
+						jop("Lista vazia");
+					}
 
 				break;
 			case 10: // 10 - Efetuar venda
 
+				nomeFuncionario = jopStr("Qual produto deseja comprar?: ");
+				profissaoFuncionario = jopStr("Qual o valor da venda: ");
+				vendas.add(nomeFuncionario);
+				valorVenda.add(Double.parseDouble(profissaoFuncionario));
+				jop("Venda efetuada com sucesso!");
+				
 				break;
 			case 11: // 11 - Listar vendas
-
+				
+				if(!vendas.isEmpty()) {
+					
+					lista = new StringBuffer();
+					
+					for (int i = 0; i < vendas.size(); i++) {
+						
+						lista.append(vendas.get(i) + ", valor:" + String.format("%.2f",  valorVenda.get(i) + "\n"));
+					
+					}
+					jop(lista.toString());
+					
+				}
+				else {
+					jop("Lista vazia");
+				}
+				
 				break;
 
 			case 0: // Sair
@@ -178,11 +237,19 @@ public class Principal {
 				break;
 
 			default: // opção invalida
+				
+				jop("O numero escolhido tem que ser de 0 à 11");
 				break;
 			}
 
 		}
 
+	}
+	
+	public static final Double jopDou(String msg) {
+		
+		double valor = 0.0;
+		return Double.parseDouble(JOptionPane.showInputDialog(msg));
 	}
 
 	public static String jopStr(String mensagem) {
